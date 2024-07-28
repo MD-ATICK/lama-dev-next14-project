@@ -41,7 +41,6 @@ export const { signOut, signIn, handlers: { GET, POST }, auth } = NextAuth({
     ],
     callbacks: {
         async signIn({ user, account, profile }) {
-            console.log('sign in - all callback', { account })
             if (account?.provider === 'github') {
                 try {
                     const prisma = new PrismaClient()
@@ -57,7 +56,6 @@ export const { signOut, signIn, handlers: { GET, POST }, auth } = NextAuth({
                                 password: ''
                             }
                         })
-                        console.log({ newUser })
                     }
                     return true;
 

@@ -1,7 +1,6 @@
 import car from '@/public/carindoor.jpg'
-import Image from 'next/image'
 import profile from '@/public/noavatar.png'
-import Loading from './loading'
+import Image from 'next/image'
 
 
 export default function page({ params }: { params: { slug: string } }) {

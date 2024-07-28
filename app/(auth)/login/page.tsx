@@ -1,15 +1,10 @@
-import { auth, signIn } from "@/lib/auth"
+import { auth } from "@/lib/auth"
 import { login } from "@/lib/login"
 
 export default async function page() {
 
   const session = await auth()
-  console.log({ session })
 
-  const handleGithubLogin = async () => {
-    "use server"
-    await signIn('github')
-  }
 
   return (
     <div className=" container p-10 mx-auto">
@@ -22,9 +17,9 @@ export default async function page() {
         <button type="submit" className=" text-white w-full py-3 bg-sky-600 rounded-lg text-sm">Login</button>
       </form>
       <br /> <br />
-      <form action={handleGithubLogin}>
+      {/* <form action={handleGithubLogin}>
         <button type="submit" className=" w-2/5 text-sm font-medium bg-sky-600 rounded-lg py-3 px-6">Login With Github</button>
-      </form>
+      </form> */}
     </div>
   )
 }

@@ -9,7 +9,6 @@ interface user {
 export const register = async (formData: FormData) => {
     "use server"
     const { name, email, password } = Object.fromEntries(formData)
-    console.log({ name, email, password })
     const prisma = new PrismaClient()
     if (!name || !email || !password) return console.log('hi');
 

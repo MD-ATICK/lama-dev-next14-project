@@ -22,7 +22,6 @@ export async function addPost(formData: FormData) {
         })
 
         revalidatePath('/blog')
-        console.log({ post })
 
     } catch (error) {
         throw new Error('post could not be added')
