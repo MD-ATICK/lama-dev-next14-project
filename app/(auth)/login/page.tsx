@@ -7,11 +7,9 @@ export default async function page() {
 
 
   return (
-    <div className=" container p-10 mx-auto">
-      {
-
-      }
-      <form action={login} className="w-[40%]">
+    <div className=" container h-[75vh] flex justify-center items-center p-[3vw] mx-auto">
+      <form action={login} className=" w-full space-y-4 md:w-[40%]">
+        <h1 className=" font-bold text-2xl">Login!</h1>
         <input name="email" placeholder="email" className=" py-3 px-8 w-full bg-sky-950 rounded-lg text-sm mb-2" type="email" />
         <input name="password" placeholder="password" className=" py-3 px-8 w-full bg-sky-950 rounded-lg text-sm mb-2" type="password" />
         <button type="submit" className=" text-white w-full py-3 bg-sky-600 rounded-lg text-sm">Login</button>

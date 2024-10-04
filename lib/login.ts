@@ -5,5 +5,6 @@ export const login = async (formData: FormData) => {
     const { email, password } = Object.fromEntries(formData)
     if (!email || !password) return console.log('hi');
 
-    await signIn('credentials', { email, password })
+    await signIn('credentials', { email, password, redirectTo: '/' })
+
 }

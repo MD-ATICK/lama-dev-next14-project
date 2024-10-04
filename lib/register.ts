@@ -1,5 +1,4 @@
-import { PrismaClient } from "@prisma/client"
-import { hashSync } from 'bcrypt'
+import { signIn } from './auth';
 interface user {
     name: string,
     email: string,
@@ -9,24 +8,27 @@ interface user {
 export const register = async (formData: FormData) => {
     "use server"
     const { name, email, password } = Object.fromEntries(formData)
-    const prisma = new PrismaClient()
     if (!name || !email || !password) return console.log('hi');
 
-    try {
-        const find = await prisma.user.findFirst({ where: { email: String(email) } })
-        if (find) throw new Error('user already exists')
+    await signIn('credentials', { email, password, redirectTo: '/' });
+    // try {
 
-        await prisma.user.create({
-            data: {
-                name: name.toString(),
-                email: email.toString(),
-                password: hashSync(password.toString(), 10),
-            }
-        })
+    // todo: having some error;
+    // const find = await db.user.findFirst({ where: { email: String(email) } })
+    // if (find) throw new Error('user already exists')
 
-        console.log("user register.")
+    // await db.user.create({
+    //     data: {
+    //         name: name.toString(),
+    //         email: email.toString(),
+    //         password: hashSync(password.toString(), 10),
+    //     }
+    // })
 
-    } catch (error) {
-        console.log((error as Error).message)
-    }
+
+
+    // } catch (error) {
+    //     console.log((error as Error).message)
+    //     return error;
+    // }
 }

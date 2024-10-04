@@ -70,7 +70,7 @@ export default function Links({ session }: any) {
                 <div className='flex items-center justify-between'>
                     <div className=' items-center gap-2 flex'>
                         <Image src={logo} alt='logo' width={35} height={35} />
-                        <h1 className=' font-bold text-xl'>Logo.</h1>
+                        <h1 className=' font-bold text-xl'>GrabHive</h1>
                     </div>
                     <CloseBtn setMenu={setMenu} />
                 </div>
@@ -83,13 +83,13 @@ export default function Links({ session }: any) {
                     {
                         session ? <div className='flex flex-col gap-8'>
                             {
-                                isAdmin && <Link href={'/admin'}>Admin</Link>
+                                isAdmin && <Link onClick={() => setMenu(false)} href={'/admin'}>Admin</Link>
                             }
-                            <button className=' text-sm py-3 px-8 font-medium rounded-lg bg-white text-black'>Logout</button>
+                            <LogoutBtn />
                         </div> :
                             <div className='flex flex-col gap-3'>
-                                <button className=' text-sm py-3 px-8 font-medium rounded-lg bg-white text-black'>Login</button>
-                                <button className=' text-sm py-3 px-8 font-medium rounded-lg bg-white text-black'>Register</button>
+                                <Link onClick={() => setMenu(false)} href={'/login'} className=' w-full flex justify-center items-center text-sm py-3 px-8 font-medium rounded-lg bg-white text-black'>Login</Link>
+                                <Link onClick={() => setMenu(false)} href={'/register'} className=' flex items-center justify-center text-sm py-3 px-8 font-medium rounded-lg bg-white text-black'>Register</Link>
                             </div>
                     }
                 </div>
