@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'LuxoraStore by Atick - Best Online Store in Bangladesh',
     description: 'Explore LuxoraStore by Atick for a handpicked collection of trendy and high-quality products. Get exclusive deals on fashion, electronics, and home essentials, perfect for shoppers in Bangladesh.',
-    url: 'https://luxorastorebyatick.vercel.app',
+    url: 'https://luxorastore.vercel.app',
     type: 'website',
     locale: 'en_BD',
     images: [
       {
-        url: 'https://luxorastorebyatick.vercel.app/og-image.jpg',
+        url: 'https://luxorastore.vercel.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'LuxoraStore by Atick - Trendy and Unique Products for Bangladesh',
@@ -32,16 +32,16 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LuxoraStore by Atick - Best Online Store in Bangladesh',
     description: 'Find exclusive deals on a wide range of trendy and unique products for Bangladeshi shoppers. From fashion to home essentials, LuxoraStore by Atick has it all.',
-    images: ['https://luxorastorebyatick.vercel.app/twitter-image.jpg'],
+    images: ['https://luxorastore.vercel.app/twitter-image.jpg'],
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://luxorastorebyatick.vercel.app',
+    canonical: 'https://luxorastore.vercel.app',
     languages: {
-      'en-BD': 'https://luxorastorebyatick.vercel.app/bd',
+      'en-BD': 'https://luxorastore.vercel.app/bd',
     },
   },
 };
@@ -53,6 +53,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="6GmT2Do1lN7VtwEFDc82A70PsvPJHHw07NtB75FFIew" />
+      </head>
       <body className={inter.className}>
         <Navbar />
         {children}
